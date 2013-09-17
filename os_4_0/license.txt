@@ -1,0 +1,1 @@
+Outsourcer is licensed under the Boost Software License version 1 with portions from the NanoHttpd license.  Both license agreements are distributed with Outsourcer.
