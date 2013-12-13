@@ -569,7 +569,7 @@ public class CommonDB
 					}
 					catch (Exception e)
 					{
-						columnValue = (String) rs.getObject(i);
+						columnValue = rs.getObject(i).toString();
 					}
 
                                         if (columnValue != null)
