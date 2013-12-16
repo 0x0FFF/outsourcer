@@ -569,7 +569,14 @@ public class CommonDB
 					}
 					catch (Exception e)
 					{
-						columnValue = (String) rs.getObject(i);
+						try
+                        			{
+                            				columnValue = (String) rs.getObject(i);
+                        			}
+                        			catch (Exception exc)
+                        			{
+                            				columnValue = "null";
+                        			}
 					}
 
                                         if (columnValue != null)
