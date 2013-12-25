@@ -3,6 +3,7 @@ import java.net.*;
 import java.io.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
+import java.math.BigDecimal;
 
 public class CommonDB
 {
@@ -566,6 +567,10 @@ public class CommonDB
 					try
 					{
                                       		columnValue = rs.getString(i);
+                                      		if (rsmd.getColumnTypeName(i) == "NUMBER") {
+                                      			BigDecimal a = rs.getBigDecimal(i);
+                                      		}
+
 					}
 					catch (Exception e)
 					{
@@ -594,8 +599,8 @@ public class CommonDB
                                         	//Filter out \ and | from the columnValue for not null records.  the rest will default to "null"
                                                 columnValue = columnValue.replace("\\", "\\\\");
                                                 columnValue = columnValue.replace("|", "\\|");
-                                                columnValue = columnValue.replace("\r", " ");
-                                                columnValue = columnValue.replace("\n", " ");
+                                                columnValue = columnValue.replace("\r", "\\r");
+                                                columnValue = columnValue.replace("\n", "\\n");
                                                 columnValue = columnValue.replace("\0", "");
                                         }
 
